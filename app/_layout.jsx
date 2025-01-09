@@ -1,5 +1,7 @@
 import { Slot, useRouter, useSegments } from "expo-router";
 import { AuthProvider, useAuth } from "@/context/AuthProvider";
+import { CrudProvider } from "@/context/CrudProvider";
+
 import { View, Text } from "react-native";
 import { useEffect } from "react";
 
@@ -29,7 +31,9 @@ const MainApp = () => {
 export default function Layout() {
   return (
     <AuthProvider>
-      <MainApp />
+      <CrudProvider>
+        <MainApp />
+      </CrudProvider>
     </AuthProvider>
   );
 }
